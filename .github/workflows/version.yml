@@ -1,0 +1,19 @@
+---
+"on":
+  schedule:
+    # 18:00 on Friday
+    - cron: 0 18 * * 5
+  workflow_dispatch:
+
+# https://github.com/softprops/action-gh-release/issues/236
+permissions:
+  contents: write
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Update version
+        run: |
+          scripts/git-commit.sh
