@@ -17,3 +17,6 @@ jobs:
       - name: Update version
         run: |
           scripts/git-commit.sh
+        env:
+          # https://github.com/orgs/community/discussions/25702
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
