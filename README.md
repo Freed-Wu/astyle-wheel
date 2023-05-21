@@ -85,6 +85,12 @@ git commit
 ### pre-commit hooks
 
 - [mirrors-clang-format](https://github.com/pre-commit/mirrors-clang-format)
+- [astyle_precommit_hook](https://github.com/mellowcandle/astyle_precommit_hook):
+  it uses git hook, not pre-commit, which make it cannot use many hooks at the
+  same time.
+- [pyastyle](https://github.com/timonwong/pyastyle): stop maintaining.
+- [astyle_py](https://github.com/igrr/astyle_py): it uses wasm, not native
+  binary programs like this project.
 
 ### Python distributions
 

@@ -101,7 +101,7 @@ repos:
         additional_dependencies:
           - tomli
   - repo: https://github.com/Freed-Wu/astyle-wheel
-    rev: 3.3-beta3
+    rev: "3.3"
     hooks:
       - id: astyle
         exclude: ^tests/input\.c$
