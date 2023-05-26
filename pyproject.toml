@@ -5,7 +5,7 @@ build-backend = "scikit_build_core.build"
 # https://setuptools.pypa.io/en/latest/userguide/pyproject_config.html
 [project]
 name = "astyle"
-version = "3.3"
+version = "3.3.1"
 description = "Artistic Style is a source code indenter, formatter, and beautifier for the C, C++, C++/CLI, Objective‑C, C# and Java programming languages"
 readme = "README.md"
 requires-python = ">= 3.7"

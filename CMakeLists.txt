@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.10)
-set(VERSION 3.3)
+set(VERSION 3.3.1)
 include(ExternalProject)
 ExternalProject_Add(
   astyle

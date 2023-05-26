@@ -70,7 +70,7 @@ astyle("--help")
 ```yaml
 repos:
   - repo: https://github.com/Freed-Wu/astyle-wheel
-    rev: 3.3
+    rev: 3.3.1
     hooks:
       - id: astyle
 ```
