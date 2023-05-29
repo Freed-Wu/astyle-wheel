@@ -1,5 +1,7 @@
 cmake_minimum_required(VERSION 3.10)
-set(VERSION 3.3.1)
+# cmake-format: off
+set(VERSION 3.3.1 CACHE STRING "version of astyle")
+# cmake-format: on
 include(ExternalProject)
 ExternalProject_Add(
   astyle
@@ -14,9 +16,7 @@ else()
   set(DESTDIR ${CMAKE_SOURCE_DIR}/src/astyle/data/)
 endif()
 include(GNUInstallDirs)
-install(
-  PROGRAMS
-    ${CMAKE_BINARY_DIR}/astyle-prefix/src/astyle-build/AStyle/astyle${CMAKE_EXECUTABLE_SUFFIX}
-  DESTINATION ${DESTDIR}${CMAKE_INSTALL_BINDIR})
+install(PROGRAMS ${CMAKE_BINARY_DIR}/astyle-prefix/src/astyle-build/AStyle/astyle${CMAKE_EXECUTABLE_SUFFIX}
+        DESTINATION ${DESTDIR}${CMAKE_INSTALL_BINDIR})
 install(FILES ${CMAKE_BINARY_DIR}/astyle-prefix/src/astyle/AStyle/man/astyle.1
         DESTINATION ${DESTDIR}${CMAKE_INSTALL_MANDIR})
