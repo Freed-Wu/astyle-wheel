@@ -17,6 +17,8 @@ jobs:
       - name: Update version
         run: |
           scripts/git-commit.sh
-        env:
+      - uses: ad-m/github-push-action@v0.6.0
+        with:
           # https://github.com/orgs/community/discussions/25702
-          GH_TOKEN: ${{ secrets.GH_TOKEN }}
+          github_token: ${{secrets.GH_TOKEN}}
+          tags: true
