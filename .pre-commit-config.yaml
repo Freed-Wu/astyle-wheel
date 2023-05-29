@@ -47,6 +47,10 @@ repos:
       - id: shellcheck
         exclude_types:
           - zsh
+  - repo: https://github.com/rhysd/actionlint
+    rev: v1.6.24
+    hooks:
+      - id: actionlint
   - repo: https://github.com/adrienverge/yamllint
     rev: v1.32.0
     hooks:
@@ -100,6 +104,10 @@ repos:
           - -cpyproject.toml
         additional_dependencies:
           - tomli
+  - repo: https://github.com/cmake-lint/cmake-lint
+    rev: 1.4.2
+    hooks:
+      - id: cmakelint
   - repo: https://github.com/Freed-Wu/astyle-wheel
     rev: "3.3"
     hooks:
@@ -108,5 +116,6 @@ repos:
 
 ci:
   skip:
+    - actionlint
     - shellcheck
     - pyright
