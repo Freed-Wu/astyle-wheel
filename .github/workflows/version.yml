@@ -14,11 +14,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
+        with:
+          # https://github.com/orgs/community/discussions/25702
+          persist-credentials: false
       - name: Update version
         run: |
           scripts/git-commit.sh
-      - uses: ad-m/github-push-action@v0.6.0
-        with:
-          # https://github.com/orgs/community/discussions/25702
-          github_token: ${{secrets.GH_TOKEN}}
-          tags: true
+        env:
+          GH_TOKEN: ${{secrets.GH_TOKEN}}
