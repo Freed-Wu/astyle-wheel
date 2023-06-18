@@ -69,7 +69,7 @@ astyle("--help")
 
 ```yaml
 repos:
-  - repo: https://github.com/Freed-Wu/astyle-wheel
+  - repo: https://github.com/Freed-Wu/mirrors-astyle
     rev: 3.3.1
     hooks:
       - id: astyle
@@ -79,6 +79,9 @@ repos:
 pre-commit install
 git commit
 ```
+
+Please use <https://github.com/Freed-Wu/mirrors-astyle>, it uses binary wheel
+and will be faster than this repository which uses source code.
 
 ## Similar Projects
 
