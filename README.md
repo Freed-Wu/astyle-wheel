@@ -70,7 +70,7 @@ astyle("--help")
 ```yaml
 repos:
   - repo: https://github.com/Freed-Wu/mirrors-astyle
-    rev: 3.4.4
+    rev: 3.4.5
     hooks:
       - id: astyle
 ```
