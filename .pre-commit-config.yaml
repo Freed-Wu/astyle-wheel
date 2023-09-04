@@ -93,7 +93,7 @@ repos:
         additional_dependencies:
           - tomli
   - repo: https://github.com/kumaraditya303/mirrors-pyright
-    rev: v1.1.324
+    rev: v1.1.325
     hooks:
       - id: pyright
   - repo: https://github.com/PyCQA/bandit
@@ -118,7 +118,7 @@ repos:
         additional_dependencies:
           - pyyaml
   - repo: https://github.com/Freed-Wu/astyle-wheel
-    rev: "3.4.5"
+    rev: "3.4.6"
     hooks:
       - id: astyle
         exclude: ^tests/input\.c$
