@@ -125,6 +125,5 @@ repos:
 
 ci:
   skip:
-    - actionlint
     - shellcheck
     - pyright
