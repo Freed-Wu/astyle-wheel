@@ -88,9 +88,13 @@ and will be faster than this repository which uses source code.
 ### pre-commit hooks
 
 - [mirrors-clang-format](https://github.com/pre-commit/mirrors-clang-format)
+- [CLinters](https://github.com/pocc/pre-commit-hooks): it requires you install
+  linters and formatters in your machine and it calls them. So it cannot
+  ensure the versions of linters and formatters are same as others, which means
+  it cannot ensure **reproducibility**.
 - [astyle_precommit_hook](https://github.com/mellowcandle/astyle_precommit_hook):
   it uses git hook, not pre-commit, which make it cannot use many hooks at the
-  same time.
+  same time. It cannot ensure **reproducibility**, too.
 - [pyastyle](https://github.com/timonwong/pyastyle): stop maintaining.
 - [astyle_py](https://github.com/igrr/astyle_py): it uses wasm, not native
   binary programs like this project.
