@@ -20,5 +20,5 @@ class Test:
         input = os.path.join(os.path.dirname(__file__), input)
         expected = os.path.join(os.path.dirname(__file__), expected)
         copy(input, tmp_path)
-        astyle("--options=none", "--suffix=none", output)
+        assert astyle("--options=none", "--suffix=none", output) == 0
         assert Path(output).read_text() == Path(expected).read_text()

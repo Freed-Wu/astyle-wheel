@@ -7,6 +7,6 @@ from subprocess import call  # nosec: B404
 BIN = str((Path(__file__).parent / "data" / "bin" / "astyle").absolute())
 
 
-def astyle(*args: str) -> None:
+def astyle(*args: str) -> int:
     r"""Call astyle."""
-    call([BIN] + list(args))  # nosec: B603
+    return call([BIN] + list(args))  # nosec: B603
