@@ -58,9 +58,9 @@ python -m astyle --help
 ### python
 
 ```python
-from astyle import astyle
+from astyle.__main__ import main
 
-astyle("--help")
+main("--help")
 ```
 
 ### pre-commit

@@ -1,12 +1,11 @@
 r"""Provide ``__version__`` for
 `importlib.metadata.version() <https://docs.python.org/3/library/importlib.metadata.html#distribution-versions>`_.
 """
-from pathlib import Path
-from subprocess import call  # nosec: B404
 
-BIN = str((Path(__file__).parent / "data" / "bin" / "astyle").absolute())
+try:
+    from ._version import __version__, __version_tuple__  # type: ignore
+except ImportError:  # for setuptools-generate
+    __version__ = "rolling"
+    __version_tuple__ = (0, 0, 0, __version__, "")
 
-
-def astyle(*args: str) -> int:
-    r"""Call astyle."""
-    return call([BIN] + list(args))  # nosec: B603
+__all__ = ["__version__", "__version_tuple__"]
