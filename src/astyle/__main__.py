@@ -18,7 +18,6 @@ def main(*args: Any) -> int:
     :type args: Any
     :rtype: int
     """
-    path = ""
     for scheme in [
         sysconfig.get_preferred_scheme("user"),
         sysconfig.get_default_scheme(),
@@ -29,8 +28,8 @@ def main(*args: Any) -> int:
         )
         if os.path.isfile(path):
             break
-    if path == "":
-        raise FileNotFoundError(path)
+    else:
+        raise FileNotFoundError
     return subprocess.run((path,) + args).returncode
 
 
