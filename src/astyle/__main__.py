@@ -18,18 +18,20 @@ def main(*args: Any) -> int:
     :type args: Any
     :rtype: int
     """
-    for scheme in [
-        sysconfig.get_preferred_scheme("user"),
-        sysconfig.get_default_scheme(),
-    ]:
-        path = os.path.join(
+    paths = [
+        os.path.join(
             sysconfig.get_path("scripts", scheme),
             NAME + sysconfig.get_config_var("EXE"),
-        )
+        ) for scheme in [
+            sysconfig.get_preferred_scheme("user"),
+            sysconfig.get_default_scheme(),
+        ]
+    ]
+    for path in paths:
         if os.path.isfile(path):
             break
     else:
-        raise FileNotFoundError
+        raise FileNotFoundError(paths)
     return subprocess.run((path,) + args).returncode
 
 
