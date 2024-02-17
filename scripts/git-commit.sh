@@ -1,10 +1,11 @@
 #!/usr/bin/env bash
-cd "$(dirname "$(readlink -f "$0")")/.." || exit 1
+set -e
+cd "$(dirname "$(readlink -f "$0")")/.."
 
 version="$(curl 'https://gitlab.com/api/v4/projects/41218592/repository/tags?per_page=1' | jq -r '.[].name')"
 perl -pi -e's/(?<=^    rev: )\S+/'"$version/" README.md
 perl -pi -e's/(?<=^set\(VERSION \S+/'"$version/" CMakeLists.txt
-[ -n "$(git diff)" ] || exit
+[ -n "$(git diff)" ]
 
 git add pyproject.toml README.md CMakeLists.txt
 git config --global user.name 'Github Actions'
