@@ -22,7 +22,8 @@ def main(*args: Any) -> int:
         os.path.join(
             sysconfig.get_path("scripts", scheme),
             NAME + sysconfig.get_config_var("EXE"),
-        ) for scheme in [
+        )
+        for scheme in [
             sysconfig.get_preferred_scheme("user"),
             sysconfig.get_default_scheme(),
         ]
