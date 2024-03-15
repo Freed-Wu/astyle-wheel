@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.10)
 # cmake-format: off
-set(VERSION 3.4.12 CACHE STRING "version of astyle")
+set(VERSION 3.4.13 CACHE STRING "version of astyle")
 # cmake-format: on
 
 include(FetchContent)
