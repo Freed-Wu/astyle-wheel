@@ -4,7 +4,10 @@
   description: >
     Artistic Style is a source code indenter, formatter, and beautifier for the
     C, C++, C++/CLI, Objective‑C, C# and Java programming languages
-  entry: astyle --options=none
+  entry: astyle
+  args:
+    - -n
+    - --options=none
   language: python
   types_or:
     - c++

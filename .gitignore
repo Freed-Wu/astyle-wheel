@@ -1,30 +1,3 @@
-data/
-_version.py
-*.ninja
-
-# create by https://github.com/iamcco/coc-gitignore (Thu May 18 2023 14:53:43 GMT+0800 (China Standard Time))
-# CMake.gitignore:
-CMakeLists.txt.user
-CMakeCache.txt
-CMakeFiles
-CMakeScripts
-Testing
-Makefile
-cmake_install.cmake
-install_manifest.txt
-compile_commands.json
-CTestTestfile.cmake
-_deps
-
-# CMake.patch:
-# External projects
-*-prefix/
-
-# create by https://github.com/iamcco/coc-gitignore (Thu May 18 2023 14:53:52 GMT+0800 (China Standard Time))
-# Ninja.gitignore:
-.ninja_deps
-.ninja_log
-
 # create by https://github.com/iamcco/coc-gitignore (Thu May 18 2023 14:53:58 GMT+0800 (China Standard Time))
 # Python.gitignore:
 # Byte-compiled / optimized / DLL files

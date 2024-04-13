@@ -63,6 +63,14 @@ from astyle.__main__ import main
 main("--help")
 ```
 
+Or:
+
+```python
+from astyle import astyle
+
+astyle("  #include <Python.h>", "indent-classes")
+```
+
 ### pre-commit
 
 `.pre-commit-config.yaml`:
