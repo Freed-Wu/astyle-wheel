@@ -7,7 +7,7 @@ include(FetchContent)
 FetchContent_Declare(astyle URL "https://gitlab.com/saalen/astyle/-/archive/${VERSION}/astyle-${VERSION}.tar.gz")
 FetchContent_MakeAvailable(astyle)
 
-find_package(Python COMPONENTS Development)
+find_package(Python COMPONENTS Development.Module)
 if(Python_FOUND)
   set(astyle_dir "${astyle_SOURCE_DIR}/AStyle/src")
   aux_source_directory("${astyle_dir}" sources)
