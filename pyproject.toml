@@ -95,7 +95,8 @@ exclude_lines = [
 
 [tool.cibuildwheel]
 archs = ["all"]
-skip = "*37-* *38-* *39-* *-win_arm64 cp312-macosx_*"
+# python extension cannot be built in win_arm64
+skip = "*37-* *38-* *39-* *-win_arm64"
 test-skip = "*-musl*"
 before-test = "pip install pytest"
 test-command = "pytest {project}"

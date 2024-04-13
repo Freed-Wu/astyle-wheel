@@ -25,7 +25,8 @@ jobs:
       matrix:
         runs-on:
           - ubuntu-latest
-          - macos-latest
+          # python extension cannot be built
+          # - macos-latest
           - windows-latest
     runs-on: ${{matrix.runs-on}}
     steps:
