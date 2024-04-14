@@ -1,6 +1,13 @@
 #ifndef WRAP_H
 #define WRAP_H 1
-#include <sys/cdefs.h>
+// make musl happy
+#ifdef __cplusplus
+#define __BEGIN_DECLS extern "C" {
+#define __END_DECLS }
+#else
+#define __BEGIN_DECLS
+#define __END_DECLS
+#endif
 __BEGIN_DECLS
 
 char *astyle_main(char *source_in, char *options);
