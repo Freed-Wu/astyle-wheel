@@ -13,9 +13,11 @@ static PyObject *binding(PyObject *self, PyObject *args, PyObject *kwargs) {
     if (!options)
         options = "";
     char *output = astyle_main(source_in, options);
-    if (output)
-        return PyUnicode_FromString(output);
-    return NULL;
+    if (!output) {
+        PyErr_SetString(PyExc_ValueError, "failed to format input source");
+        return NULL;
+    }
+    return PyUnicode_FromString(output);
 }
 
 static PyMethodDef methods[] = {
