@@ -25,9 +25,12 @@ if(Python_FOUND)
   endif()
   find_package(Cython MODULE REQUIRED VERSION 3.0)
   include(UseCython)
-  cython_transpile("src/astyle/__init__.py"
-    CYTHON_ARGS "-3I${CMAKE_SOURCE_DIR}/src/astyle" LANGUAGE C OUTPUT_VARIABLE output)
-  python_add_library(__init__ MODULE "${output}" "src/astyle/wrap.cc" "${sources}" WITH_SOABI)
+  # https://github.com/elijahr/python-autopxd2/issues/54
+  find_program(autopxd NAMES autopxd REQUIRED)
+  execute_process(COMMAND "${autopxd}" "${CMAKE_CURRENT_SOURCE_DIR}/src/astyle/wrap.h" "${CMAKE_CURRENT_BINARY_DIR}/wrap.pxd")
+  cython_transpile(src/astyle/__init__.py
+    CYTHON_ARGS "-3I${CMAKE_CURRENT_BINARY_DIR}" LANGUAGE C OUTPUT_VARIABLE output)
+  python_add_library(__init__ MODULE "${output}" src/astyle/wrap.cc "${sources}" WITH_SOABI)
   target_compile_definitions(__init__ PRIVATE ASTYLE_LIB)
   target_include_directories(__init__ PRIVATE "${astyle_dir}")
   install(TARGETS __init__ DESTINATION "${SKBUILD_PLATLIB_DIR}/astyle")

@@ -1,5 +1,5 @@
 [build-system]
-requires = ["scikit-build-core", "cython-cmake"]
+requires = ["scikit-build-core", "cython-cmake", "autopxd2"]
 build-backend = "scikit_build_core.build"
 
 # https://setuptools.pypa.io/en/latest/userguide/pyproject_config.html

@@ -1,5 +1,6 @@
 # cython
 src/astyle/__init__.c
+*.pxd
 __cmake_systeminformation/
 
 # create by https://github.com/iamcco/coc-gitignore (Thu May 18 2023 14:53:58 GMT+0800 (China Standard Time))
