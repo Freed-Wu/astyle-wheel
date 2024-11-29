@@ -10,7 +10,7 @@
 #endif
 __BEGIN_DECLS
 
-extern const char* __version__;
+const char* AStyleGetVersion();
 char *astyle_main(char *source_in, char *options);
 
 __END_DECLS

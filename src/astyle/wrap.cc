@@ -3,8 +3,6 @@
 
 #include "wrap.h"
 
-const char *__version__ = AStyleGetVersion();
-
 static void STDCALL errorHandler(int errorNumber, const char *errorMessage) {
     PyErr_SetString(PyExc_ValueError, errorMessage);
 }

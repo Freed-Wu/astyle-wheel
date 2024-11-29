@@ -4,9 +4,11 @@ Keep this file for type annotation.
 """
 
 from cython.cimports.wrap import (  # type: ignore
-    __version__,  # noqa: F401
+    AStyleGetVersion,  # noqa: F401
     astyle_main,
 )
+
+__version__ = AStyleGetVersion().decode()
 
 
 def astyle(source_in: str, options: str = "") -> str:
