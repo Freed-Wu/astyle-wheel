@@ -2,6 +2,13 @@ cmake_minimum_required(VERSION 3.10)
 # cmake-format: off
 set(VERSION 3.6.4 CACHE STRING "version of astyle")
 # cmake-format: on
+project(
+  astyle-wheel
+  VERSION "${VERSION}"
+  DESCRIPTION "wheel for astyle"
+  HOMEPAGE_URL https://github.com/Freed-Wu/astyle-wheel)
+# https://gitlab.com/saalen/astyle/-/issues/51
+set(CXX_STANDARD 17)
 
 include(FetchContent)
 FetchContent_Declare(astyle URL "https://gitlab.com/saalen/astyle/-/archive/${VERSION}/astyle-${VERSION}.tar.gz")
