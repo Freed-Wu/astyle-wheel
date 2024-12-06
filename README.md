@@ -78,7 +78,7 @@ astyle("  #include <Python.h>", "indent-classes")
 ```yaml
 repos:
   - repo: https://github.com/Freed-Wu/mirrors-astyle
-    rev: 3.6.4
+    rev: 3.6.5
     hooks:
       - id: astyle
 ```
