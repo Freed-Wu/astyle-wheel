@@ -110,3 +110,4 @@ git commit
 - [clang-format-wheel](https://github.com/ssciwr/clang-format-wheel)
 - [cmake-python-distributions](https://github.com/scikit-build/cmake-python-distributions)
 - [ninja-python-distributions](https://github.com/scikit-build/ninja-python-distributions)
+- [patchelf-pypi](https://github.com/mayeut/patchelf-pypi)
