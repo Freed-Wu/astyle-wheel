@@ -8,11 +8,16 @@ mkShell {
   buildInputs = [
     cmake
     ninja
+
     git
+
     (python3.withPackages (
       p: with p; [
-        cython
         build
+        pytest
+
+        cython
+        autopxd2
       ]
     ))
   ];
