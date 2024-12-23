@@ -6,15 +6,15 @@ with pkgs;
 mkShell {
   name = "astyle-wheel";
   buildInputs = [
-    cmake
-    ninja
-
     git
+
+    stdenv.cc
 
     (python3.withPackages (
       p: with p; [
-        build
+        uv
         pytest
+        scikit-build-core
 
         cython
         autopxd2
