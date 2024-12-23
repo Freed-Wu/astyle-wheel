@@ -99,7 +99,7 @@ repos:
     rev: "3.4.6"
     hooks:
       - id: astyle
-        exclude: ^tests/input\.c$
+        exclude: \btests/input\.c$
 
 ci:
   skip:

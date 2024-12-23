@@ -106,6 +106,7 @@ git commit
 
 ### Python distributions
 
+- [cppcheck-wheel](https://github.com/msclock/cppcheck-wheel)
 - [clang-format-wheel](https://github.com/ssciwr/clang-format-wheel)
 - [cmake-python-distributions](https://github.com/scikit-build/cmake-python-distributions)
 - [ninja-python-distributions](https://github.com/scikit-build/ninja-python-distributions)

@@ -1,5 +1,5 @@
 # cython
-src/astyle/__init__.c
+__init__.c
 *.pxd
 __cmake_systeminformation/
 

@@ -25,15 +25,41 @@ jobs:
       matrix:
         runs-on:
           - ubuntu-latest
-          # python extension cannot be built
-          # - macos-latest
+          # build/_deps/astyle-src/AStyle/src/ASBeautifier.cpp:3914:97:
+          # error: expected expression
+          # size_t countLS = std::count_if( searchTemplatePattern.begin(),
+          # searchTemplatePattern.end(), []( char c ){return c =='<';});
+          - macos-latest
+          # D:\a\astyle-wheel\astyle-wheel\tests\astyle_test.py:8: in <module>
+          #     from astyle.__main__ import main
+          # E   ImportError: DLL load failed while importing astyle:
+          # The specified module could not be found.
           - windows-latest
     runs-on: ${{matrix.runs-on}}
     steps:
       - uses: actions/checkout@v4
+        with:
+          path: astyle-wheel
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{env.python-version}}
+          cache: ${{env.cache}}
+      - name: Install dependencies
+        run: |
+          pip install uv
+      - name: Move packages
+        if: runner.os != 'windows'
+        run: |
+          mv astyle-wheel/packages/astyle/* .
+          rm -rf astyle-wheel
+      - name: Move packages
+        if: runner.os == 'windows'
+        run: |
+          move astyle-wheel/packages/astyle/* .
+          Remove-Item -Recurse -Force -Path astyle-wheel
       - uses: docker/setup-qemu-action@v3
         if: runner.os == 'Linux'
-      - uses: pypa/cibuildwheel@v2.16
+      - uses: pypa/cibuildwheel@v2.22
       - uses: actions/upload-artifact@v4
         with:
           name: artifact-${{matrix.runs-on}}
@@ -41,8 +67,8 @@ jobs:
             wheelhouse/*.whl
 
   build:
-    needs:
-      - build-wheels-and-test
+    # needs:
+    #   - build-wheels-and-test
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -52,10 +78,10 @@ jobs:
           cache: ${{env.cache}}
       - name: Install dependencies
         run: |
-          pip install build
+          pip install uv
       - name: Build sdist
         run: |
-          pyproject-build -s
+          uv build --sdist --package astyle
       - uses: actions/upload-artifact@v4
         if: "! startsWith(github.ref, 'refs/tags/')"
         with:
@@ -67,7 +93,7 @@ jobs:
           pattern: artifact-*
           merge-multiple: true
           path: dist
-      - uses: softprops/action-gh-release@v1
+      - uses: softprops/action-gh-release@v2
         if: startsWith(github.ref, 'refs/tags/')
         with:
           # body_path: build/CHANGELOG.md
