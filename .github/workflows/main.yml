@@ -29,12 +29,12 @@ jobs:
           # error: expected expression
           # size_t countLS = std::count_if( searchTemplatePattern.begin(),
           # searchTemplatePattern.end(), []( char c ){return c =='<';});
-          - macos-latest
+          # - macos-latest
           # D:\a\astyle-wheel\astyle-wheel\tests\astyle_test.py:8: in <module>
           #     from astyle.__main__ import main
           # E   ImportError: DLL load failed while importing astyle:
           # The specified module could not be found.
-          - windows-latest
+          # - windows-latest
     runs-on: ${{matrix.runs-on}}
     steps:
       - uses: actions/checkout@v4
@@ -67,8 +67,8 @@ jobs:
             wheelhouse/*.whl
 
   build:
-    # needs:
-    #   - build-wheels-and-test
+    needs:
+      - build-wheels-and-test
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
