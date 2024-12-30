@@ -15,10 +15,9 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          # https://github.com/orgs/community/discussions/25702
-          persist-credentials: false
+          token: ${{ secrets.GH_TOKEN }}
       - name: Update version
         run: |
-          scripts/git-commit.sh
-        env:
-          GH_TOKEN: ${{secrets.GH_TOKEN}}
+          scripts/update-version.pl pyproject.toml \
+            packages/astyle/{README.md,CMakeLists.txt,pyproject.toml}
+      - uses: stefanzweifel/git-auto-commit-action@v5

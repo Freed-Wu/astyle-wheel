@@ -46,10 +46,6 @@ repos:
     rev: 3.0.0
     hooks:
       - id: check-mailmap
-      # https://github.com/koalaman/shellcheck/issues/2909
-      - id: shellcheck
-        exclude_types:
-          - zsh
   - repo: https://github.com/rhysd/actionlint
     rev: v1.7.4
     hooks:
@@ -59,7 +55,7 @@ repos:
     hooks:
       - id: yamllint
   - repo: https://github.com/executablebooks/mdformat
-    rev: 0.7.19
+    rev: 0.7.21
     hooks:
       - id: mdformat
         additional_dependencies:
@@ -78,17 +74,13 @@ repos:
       - id: markdownlint-cli2
         additional_dependencies:
           - markdown-it-texmath
-  - repo: https://github.com/scop/pre-commit-shfmt
-    rev: v3.10.0-2
-    hooks:
-      - id: shfmt
   - repo: https://github.com/astral-sh/ruff-pre-commit
-    rev: v0.8.3
+    rev: v0.8.4
     hooks:
       - id: ruff
       - id: ruff-format
   - repo: https://github.com/kumaraditya303/mirrors-pyright
-    rev: v1.1.390
+    rev: v1.1.391
     hooks:
       - id: pyright
   - repo: https://github.com/cmake-lint/cmake-lint
@@ -103,5 +95,4 @@ repos:
 
 ci:
   skip:
-    - shellcheck
     - pyright
