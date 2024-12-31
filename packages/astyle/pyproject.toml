@@ -51,7 +51,8 @@ wheel.exclude = ["**.c", "**.cc", "**.h", "**.pxd"]
 [tool.cibuildwheel]
 archs = ["all"]
 # error: 'path' is unavailable: introduced in macOS 10.15
-skip = "*37-* *38-* *39-* pp* *-macosx_x86_64 *-macosx_universal2"
+# E   ModuleNotFoundError: No module named 'cython'
+skip = "*37-* *38-* *39-* pp* *-macosx_x86_64 *-macosx_universal2 *_armv7l"
 build-frontend = "build[uv]"
 before-test = "pip install .[dev]"
 test-command = "pytest {project}"
