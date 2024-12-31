@@ -25,15 +25,8 @@ jobs:
       matrix:
         runs-on:
           - ubuntu-latest
-          # build/_deps/astyle-src/AStyle/src/ASBeautifier.cpp:3914:97:
-          # error: expected expression
-          # size_t countLS = std::count_if( searchTemplatePattern.begin(),
-          # searchTemplatePattern.end(), []( char c ){return c =='<';});
-          # - macos-latest
-          # D:\a\astyle-wheel\astyle-wheel\tests\astyle_test.py:8: in <module>
-          #     from astyle.__main__ import main
-          # E   ImportError: DLL load failed while importing astyle:
-          # The specified module could not be found.
+          - macos-latest
+          # https://github.com/Freed-Wu/astyle-wheel/issues/16
           # - windows-latest
     runs-on: ${{matrix.runs-on}}
     steps:
