@@ -8,7 +8,7 @@ project(
   DESCRIPTION "wheel for astyle"
   HOMEPAGE_URL https://github.com/Freed-Wu/astyle-wheel)
 # https://gitlab.com/saalen/astyle/-/issues/51
-set(CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_INCLUDE_CURRENT_DIR ON)
 
 include(FetchContent)
