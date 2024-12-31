@@ -27,8 +27,10 @@ classifiers = [
   "Programming Language :: Python :: Implementation :: CPython",
   "Programming Language :: Python :: Implementation :: PyPy",
 ]
-version = "3.4.13"
-dependencies = ["astyle==3.4.13"]
+version = "3.6.6
+"
+dependencies = ["astyle==3.6.6
+"]
 
 [[project.authors]]
 name = "Wu, Zhenyu"
