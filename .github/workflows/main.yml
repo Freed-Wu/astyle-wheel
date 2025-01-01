@@ -33,10 +33,6 @@ jobs:
       - uses: actions/checkout@v4
         with:
           path: astyle-wheel
-      - uses: actions/setup-python@v5
-        with:
-          python-version: ${{env.python-version}}
-          cache: ${{env.cache}}
       - name: Move packages
         if: runner.os != 'windows'
         run: |
@@ -47,6 +43,13 @@ jobs:
         run: |
           move astyle-wheel/packages/astyle/* .
           Remove-Item -Recurse -Force -Path astyle-wheel
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{env.python-version}}
+          cache: ${{env.cache}}
+      - name: Install dependencies
+        run: |
+          pip install uv
       - uses: docker/setup-qemu-action@v3
         if: runner.os == 'Linux'
       - uses: pypa/cibuildwheel@v2.22

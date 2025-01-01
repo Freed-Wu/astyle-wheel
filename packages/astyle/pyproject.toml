@@ -57,6 +57,5 @@ archs = ["all"]
 # Error: Command ['which', 'uv'] failed with code 1.
 skip = "*37-* *38-* *39-* pp* *-macosx_x86_64 *-macosx_universal2 *_armv7l *-musllinux_s390x *-musllinux-aarch64 *-musllinux_ppc64*"
 build-frontend = "build[uv]"
-before-build = "pip install uv"
 before-test = "pip install .[dev]"
 test-command = "pytest {project}"
