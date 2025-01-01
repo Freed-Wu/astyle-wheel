@@ -48,7 +48,7 @@ git commit
 ### Python Port
 
 - [pyastyle](https://github.com/timonwong/pyastyle): stop maintaining.
-  a python port of astyle. this project provide similar APIs.
+  a python port of astyle. this project provides similar APIs.
 
 ### pre-commit hooks
 
