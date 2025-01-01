@@ -37,9 +37,6 @@ jobs:
         with:
           python-version: ${{env.python-version}}
           cache: ${{env.cache}}
-      - name: Install dependencies
-        run: |
-          pip install uv
       - name: Move packages
         if: runner.os != 'windows'
         run: |
