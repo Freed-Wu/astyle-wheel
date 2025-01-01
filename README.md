@@ -1,4 +1,4 @@
-# Astyle Python distribution
+# Pre-commit hook for astyle
 
 [![pre-commit.ci status](https://results.pre-commit.ci/badge/github/Freed-Wu/astyle-wheel/main.svg)](https://results.pre-commit.ci/latest/github/Freed-Wu/astyle-wheel/main)
 [![github/workflow](https://github.com/Freed-Wu/astyle-wheel/actions/workflows/main.yml/badge.svg)](https://github.com/Freed-Wu/astyle-wheel/actions)
@@ -34,54 +34,9 @@
 [![pypi/implementation](https://shields.io/pypi/implementation/astyle)](https://pypi.org/project/astyle/#files)
 [![pypi/pyversions](https://shields.io/pypi/pyversions/astyle)](https://pypi.org/project/astyle/#files)
 
-This project packages the [astyle](https://gitlab.com/saalen/astyle) utility as
-a Python package.
+See [Astyle Python Distribution](packages/astyle).
 
 ## Install
-
-```shell
-pip install astyle
-```
-
-Installing is not needed for [pre-commit](https://pre-commit.com/).
-
-## Usage
-
-### shell
-
-```shell
-astyle --help
-# or
-python -m astyle --help
-```
-
-### python
-
-```python
-from astyle.__main__ import main
-
-main("--help")
-```
-
-Or:
-
-```python
-from astyle import astyle
-
-astyle("  #include <Python.h>", "indent-classes")
-```
-
-### pre-commit
-
-`.pre-commit-config.yaml`:
-
-```yaml
-repos:
-  - repo: https://github.com/Freed-Wu/astyle-wheel
-    rev: 3.4.13
-    hooks:
-      - id: astyle
-```
 
 ```shell
 pre-commit install
