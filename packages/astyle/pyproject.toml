@@ -50,10 +50,9 @@ wheel.exclude = ["**.c", "**.cc", "**.h", "**.pxd"]
 
 [tool.cibuildwheel]
 archs = ["all"]
-# https://github.com/pypa/cibuildwheel/issues/2119
-# https://github.com/cython/cython/issues/6424
+# https://github.com/cython/cython/issues/6593
 # https://github.com/astral-sh/uv/issues/10260
-skip = "*37-* *38-* *39-* pp* *-macosx_x86_64 *-macosx_universal2 *_armv7l *-musllinux_s390x *-musllinux_ppc64*"
+skip = "*37-* *38-* *39-* pp* *_armv7l *-musllinux_s390x *-musllinux_ppc64*"
 build-frontend = "build[uv]"
 before-test = "pip install .[dev]"
 test-command = "pytest {project}"

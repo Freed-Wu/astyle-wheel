@@ -58,6 +58,10 @@ jobs:
           name: artifact-${{matrix.runs-on}}
           path: |
             wheelhouse/*.whl
+        env:
+          # https://cibuildwheel.pypa.io/en/stable/cpp_standards/#macos-and-deployment-target-versions
+          # error: 'path' is unavailable: introduced in macOS 10.15
+          MACOSX_DEPLOYMENT_TARGET: "10.15"
 
   build:
     needs:
