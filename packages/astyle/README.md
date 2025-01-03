@@ -42,7 +42,7 @@ astyle("  #include <Python.h>", "indent-classes")
 ```yaml
 repos:
   - repo: https://github.com/Freed-Wu/astyle-wheel
-    rev: 3.4.13
+    rev: 3.6.6
     hooks:
       - id: astyle
 ```
