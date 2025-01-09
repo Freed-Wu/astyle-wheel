@@ -68,11 +68,6 @@ git commit
 
 - [mirrors-clang-format](https://github.com/pre-commit/mirrors-clang-format)
 
-### Python distributions
+### Python Wheels
 
-- [cppcheck-wheel](https://github.com/msclock/cppcheck-wheel)
-- [clang-format-wheel](https://github.com/ssciwr/clang-format-wheel)
-- [nodejs-wheel](https://pypi.org/project/nodejs-wheel/)
-- [cmake-python-distributions](https://github.com/scikit-build/cmake-python-distributions)
-- [ninja-python-distributions](https://github.com/scikit-build/ninja-python-distributions)
-- [patchelf-pypi](https://github.com/mayeut/patchelf-pypi)
+Refer [Python Wheels](https://github.com/xmake-io/xmake-wheel#python-wheels).
