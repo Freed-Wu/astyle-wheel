@@ -10,3 +10,4 @@ s/(?<=^    rev: )\S+/$version/;
 s/(?<=^set\(VERSION )\S+/$version/;
 s/(?<=astyle==)[^"]+/$version/;
 s/(?<=version = ")[^"]+/$version/;
+s/(?<=^          tagging_message: )\S+/$version/;
