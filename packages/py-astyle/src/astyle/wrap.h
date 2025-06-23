@@ -10,7 +10,10 @@
 #endif
 __BEGIN_DECLS
 
-const char* AStyleGetVersion();
+#ifndef _WIN32
+#define __stdcall
+#endif
+const char *__stdcall AStyleGetVersion();
 char *astyle_main(char *source_in, char *options);
 
 __END_DECLS
