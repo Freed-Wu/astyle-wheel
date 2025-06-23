@@ -60,6 +60,11 @@ archs = ["all"]
 build = "cp312-*"
 build-frontend = "build[uv]"
 
+[[tool.cibuildwheel.overrides]]
+select = ["*-macosx_*"]
+# AssertionError: uv not found
+before-all = "brew install uv"
+
 [tool.cibuildwheel.environment]
 # error: 'path' is unavailable: introduced in macOS 10.15
 MACOSX_DEPLOYMENT_TARGET = "10.15"
