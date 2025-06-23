@@ -16,7 +16,6 @@ env:
   files: dist/*
   python-version: 3.x
   cache: pip
-  PACKAGE_NAME: py-astyle
 
 jobs:
   build-wheels-and-test:
@@ -30,45 +29,31 @@ jobs:
     runs-on: ${{matrix.runs-on}}
     steps:
       - uses: actions/checkout@v4
+      - uses: actions/github-script@v7
         with:
-          path: astyle-wheel
-      - name: Move packages
-        if: runner.os != 'windows'
-        run: |
-          mv "astyle-wheel/packages/$PACKAGE_NAME"/* .
-          rm -rf astyle-wheel
-      - name: Move packages
-        if: runner.os == 'windows'
-        run: |
-          move astyle-wheel/packages/$env:PACKAGE_NAME/* .
-          Remove-Item -Recurse -Force -Path astyle-wheel
+          script: |
+            require('./scripts/move-package.js')(io)
       - uses: astral-sh/setup-uv@v6
         if: runner.os == 'windows'
+      - name: Build sdist
+        if: runner.os == 'windows'
+        run: |
+          uv build --sdist
       - uses: docker/setup-qemu-action@v3
         if: runner.os == 'Linux'
-      - uses: pypa/cibuildwheel@v2.22
+      - uses: pypa/cibuildwheel@v2.23
       - uses: actions/upload-artifact@v4
         with:
           name: artifact-${{matrix.runs-on}}
           path: |
             wheelhouse/*.whl
+            ${{env.files}}
 
   build:
     needs:
       - build-wheels-and-test
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: astral-sh/setup-uv@v6
-      - name: Build sdist
-        run: |
-          uv build --sdist --package $PACKAGE_NAME
-      - uses: actions/upload-artifact@v4
-        if: "! startsWith(github.ref, 'refs/tags/')"
-        with:
-          name: artifact-sdist
-          path: |
-            ${{env.files}}
       - uses: actions/download-artifact@v4
         with:
           pattern: artifact-*

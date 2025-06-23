@@ -1,7 +1,8 @@
 # Pre-commit hook for astyle
 
 [![pre-commit.ci status](https://results.pre-commit.ci/badge/github/Freed-Wu/astyle-wheel/main.svg)](https://results.pre-commit.ci/latest/github/Freed-Wu/astyle-wheel/main)
-[![github/workflow](https://github.com/Freed-Wu/astyle-wheel/actions/workflows/main.yml/badge.svg)](https://github.com/Freed-Wu/astyle-wheel/actions)
+[![github/workflow](https://github.com/Freed-Wu/astyle-wheel/actions/workflows/astyle.yml/badge.svg)](https://github.com/Freed-Wu/astyle-wheel/actions)
+[![github/workflow](https://github.com/Freed-Wu/astyle-wheel/actions/workflows/py-astyle.yml/badge.svg)](https://github.com/Freed-Wu/astyle-wheel/actions)
 
 [![github/downloads](https://shields.io/github/downloads/Freed-Wu/astyle-wheel/total)](https://github.com/Freed-Wu/astyle-wheel/releases)
 [![github/downloads/latest](https://shields.io/github/downloads/Freed-Wu/astyle-wheel/latest/total)](https://github.com/Freed-Wu/astyle-wheel/releases/latest)
