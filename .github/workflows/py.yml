@@ -26,8 +26,7 @@ jobs:
         runs-on:
           - ubuntu-latest
           - macos-latest
-          # https://github.com/Freed-Wu/astyle-wheel/issues/16
-          # - windows-latest
+          - windows-latest
     runs-on: ${{matrix.runs-on}}
     steps:
       - uses: actions/checkout@v4
@@ -41,8 +40,10 @@ jobs:
       - name: Move packages
         if: runner.os == 'windows'
         run: |
-          move astyle-wheel/packages/$PACKAGE_NAME/* .
+          move astyle-wheel/packages/$env:PACKAGE_NAME/* .
           Remove-Item -Recurse -Force -Path astyle-wheel
+      - uses: astral-sh/setup-uv@v6
+        if: runner.os == 'windows'
       - uses: docker/setup-qemu-action@v3
         if: runner.os == 'Linux'
       - uses: pypa/cibuildwheel@v2.22
