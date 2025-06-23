@@ -18,8 +18,8 @@ jobs:
           token: ${{ secrets.GH_TOKEN }}
       - name: Update version
         run: |
-          scripts/update-version.pl pyproject.toml \
-            packages/astyle/{README.md,CMakeLists.txt,pyproject.toml}
+          scripts/update-version.pl README.md pyproject.toml \
+            packages/{py-,}astyle/{CMakeLists.txt,pyproject.toml}
       - uses: stefanzweifel/git-auto-commit-action@v5
         with:
           tagging_message: 3.6.9

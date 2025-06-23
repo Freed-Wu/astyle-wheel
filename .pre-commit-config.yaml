@@ -69,33 +69,28 @@ repos:
           - mdformat-config
           - mdformat-web
   - repo: https://github.com/DavidAnson/markdownlint-cli2
-    rev: v0.18.0
+    rev: v0.18.1
     hooks:
       - id: markdownlint-cli2
         additional_dependencies:
           - markdown-it-texmath
   - repo: https://github.com/perltidy/perltidy
-    rev: "20250311.03"
+    rev: "20250616"
     hooks:
       - id: perltidy
   - repo: https://github.com/astral-sh/ruff-pre-commit
-    rev: v0.11.9
+    rev: v0.11.13
     hooks:
       - id: ruff
       - id: ruff-format
   - repo: https://github.com/kumaraditya303/mirrors-pyright
-    rev: v1.1.400
+    rev: v1.1.402
     hooks:
       - id: pyright
-  - repo: https://github.com/cmake-lint/cmake-lint
-    rev: 1.4.3
-    hooks:
-      - id: cmakelint
   - repo: https://github.com/Freed-Wu/astyle-wheel
     rev: 3.6.9
     hooks:
       - id: astyle
-        exclude: \btests/input\.c$
 
 ci:
   skip:

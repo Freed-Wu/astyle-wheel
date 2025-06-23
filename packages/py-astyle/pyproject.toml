@@ -4,7 +4,7 @@ build-backend = "scikit_build_core.build"
 
 # https://setuptools.pypa.io/en/latest/userguide/pyproject_config.html
 [project]
-name = "astyle"
+name = "py-astyle"
 description = "Artistic Style is a source code indenter, formatter, and beautifier for the C, C++, C++/CLI, Objective‑C, C# and Java programming languages"
 readme = "README.md"
 # sysconfig.get_preferred_scheme()
@@ -28,9 +28,6 @@ classifiers = [
   "Programming Language :: Python :: Implementation :: PyPy",
 ]
 version = "3.6.9"
-
-[tool.scikit-build.wheel]
-py-api = "py2.py3"
 
 [project.optional-dependencies]
 dev = ["pytest-cov"]
@@ -57,8 +54,10 @@ Source = "https://github.com/Freed-Wu/astyle-wheel"
 
 [tool.cibuildwheel]
 archs = ["all"]
-build = "cp312-*"
+skip = "*37-* *38-* *39-*"
 build-frontend = "build[uv]"
+before-test = "pip install .[dev]"
+test-command = "pytest {project}"
 
 [tool.cibuildwheel.environment]
 # error: 'path' is unavailable: introduced in macOS 10.15

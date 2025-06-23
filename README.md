@@ -34,23 +34,19 @@
 [![pypi/implementation](https://shields.io/pypi/implementation/astyle)](https://pypi.org/project/astyle/#files)
 [![pypi/pyversions](https://shields.io/pypi/pyversions/astyle)](https://pypi.org/project/astyle/#files)
 
-See [Astyle Python Distribution](packages/astyle).
+See [astyle python distribution and port](packages).
 
-## Install
+`.pre-commit-config.yaml`:
 
-```shell
-pre-commit install
-git commit
+```yaml
+repos:
+  - repo: https://github.com/Freed-Wu/astyle-wheel
+    rev: 3.6.9
+    hooks:
+      - id: astyle
 ```
 
 ## Related Projects
-
-### Python Port
-
-- [pyastyle](https://github.com/timonwong/pyastyle): stop maintaining.
-  a python port of astyle. this project provides similar APIs.
-
-### pre-commit hooks
 
 - [CLinters](https://github.com/pocc/pre-commit-hooks): it requires you install
   linters and formatters in your machine and it calls them. So it cannot
@@ -62,12 +58,6 @@ git commit
 - [astyle_py](https://github.com/igrr/astyle_py): it uses wasm, not native
   binary programs like this project.
 
-## Similar Projects
-
-### Alternatives
+## Alternatives
 
 - [mirrors-clang-format](https://github.com/pre-commit/mirrors-clang-format)
-
-### Python Wheels
-
-Refer [Python Wheels](https://github.com/xmake-io/xmake-wheel#python-wheels).

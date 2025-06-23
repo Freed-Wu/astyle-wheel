@@ -16,7 +16,7 @@ env:
   files: dist/*
   python-version: 3.x
   cache: pip
-  PACKAGE_NAME: astyle
+  PACKAGE_NAME: py-astyle
 
 jobs:
   build-wheels-and-test:
