@@ -6,7 +6,7 @@ This project provides python binding for
 ## Install
 
 ```shell
-pip install pyastyle
+pip install pyastyle2
 ```
 
 ## Usage
