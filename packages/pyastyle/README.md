@@ -1,11 +1,12 @@
-# Astyle python port
+# Astyle python binding
 
-This project provides python port for [astyle](https://gitlab.com/saalen/astyle).
+This project provides python binding for
+[astyle](https://gitlab.com/saalen/astyle).
 
 ## Install
 
 ```shell
-pip install py-astyle
+pip install pyastyle
 ```
 
 ## Usage
