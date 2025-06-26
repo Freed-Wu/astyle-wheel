@@ -37,7 +37,7 @@ jobs:
         if: runner.os == 'Linux'
       - uses: pypa/cibuildwheel@v2.23
       - name: Build sdist
-        if: runner.os == 'windows'
+        if: runner.os == 'macOS'
         run: |
           uv build --sdist -o wheelhouse
       - uses: actions/upload-artifact@v4
