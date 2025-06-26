@@ -35,8 +35,6 @@ jobs:
             require('./scripts/move-package.js')(io)
       - uses: docker/setup-qemu-action@v3
         if: runner.os == 'Linux'
-      - uses: astral-sh/setup-uv@v6
-        if: runner.os == 'windows'
       - uses: pypa/cibuildwheel@v2.23
       - name: Build sdist
         if: runner.os == 'windows'
