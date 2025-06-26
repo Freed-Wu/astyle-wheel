@@ -58,9 +58,9 @@ skip = "*37-* *38-* *39-*"
 build-frontend = "build[uv]"
 
 [[tool.cibuildwheel.overrides]]
-select = ["*-macosx_*"]
+select = ["*-macosx_*", "*-win*"]
 # AssertionError: uv not found
-before-all = "brew install uv"
+before-all = "pip install uv"
 
 [tool.cibuildwheel.environment]
 # error: 'path' is unavailable: introduced in macOS 10.15
