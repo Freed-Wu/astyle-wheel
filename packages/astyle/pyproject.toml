@@ -58,14 +58,14 @@ archs = ["all"]
 build = "cp312-*"
 build-frontend = "build[uv]"
 
+[tool.cibuildwheel.environment]
+# error: 'path' is unavailable: introduced in macOS 10.15
+MACOSX_DEPLOYMENT_TARGET = "10.15"
+
 [[tool.cibuildwheel.overrides]]
 select = ["*-macosx_*", "*-win*"]
 # AssertionError: uv not found
 before-all = "pip install uv"
-
-[tool.cibuildwheel.environment]
-# error: 'path' is unavailable: introduced in macOS 10.15
-MACOSX_DEPLOYMENT_TARGET = "10.15"
 
 # https://github.com/astral-sh/uv/issues/10260
 [[tool.cibuildwheel.overrides]]
