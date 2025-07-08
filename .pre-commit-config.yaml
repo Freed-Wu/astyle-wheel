@@ -75,11 +75,11 @@ repos:
         additional_dependencies:
           - markdown-it-texmath
   - repo: https://github.com/perltidy/perltidy
-    rev: "20250616"
+    rev: "20250616.02"
     hooks:
       - id: perltidy
   - repo: https://github.com/astral-sh/ruff-pre-commit
-    rev: v0.11.13
+    rev: v0.12.1
     hooks:
       - id: ruff
       - id: ruff-format

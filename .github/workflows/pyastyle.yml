@@ -18,51 +18,6 @@ env:
   cache: pip
 
 jobs:
-  build-wheels-and-test:
-    strategy:
-      fail-fast: false
-      matrix:
-        runs-on:
-          - ubuntu-latest
-          - macos-latest
-          - windows-latest
-    runs-on: ${{matrix.runs-on}}
-    steps:
-      - uses: actions/checkout@v4
-      - uses: actions/github-script@v7
-        with:
-          script: |
-            require('./scripts/move-package.js')(io)
-      - uses: docker/setup-qemu-action@v3
-        if: runner.os == 'Linux'
-      - uses: pypa/cibuildwheel@v2.23
-      - name: Build sdist
-        if: runner.os == 'macOS'
-        run: |
-          uv build --sdist -o wheelhouse
-      - uses: actions/upload-artifact@v4
-        with:
-          name: artifact-${{matrix.runs-on}}
-          path: |
-            wheelhouse/*
-
   build:
-    needs:
-      - build-wheels-and-test
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/download-artifact@v4
-        with:
-          pattern: artifact-*
-          merge-multiple: true
-          path: dist
-      - uses: softprops/action-gh-release@v2
-        if: startsWith(github.ref, 'refs/tags/')
-        with:
-          # body_path: build/CHANGELOG.md
-          files: |
-            ${{env.files}}
-      - uses: pypa/gh-action-pypi-publish@release/v1
-        if: startsWith(github.ref, 'refs/tags/')
-        with:
-          password: ${{secrets.PYPI_API_TOKEN}}
+    uses: ./.github/workflows/astyle.yml
+    secrets: inherit
