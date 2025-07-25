@@ -25,7 +25,7 @@ classifiers = [
   "Programming Language :: Python :: Implementation :: CPython",
   "Programming Language :: Python :: Implementation :: PyPy",
 ]
-version = "3.6.9"
+version = "3.6.11"
 
 [tool.scikit-build.wheel]
 py-api = "py2.py3"

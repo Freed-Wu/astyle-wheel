@@ -42,7 +42,7 @@ See [astyle python distribution and binding](packages).
 ```yaml
 repos:
   - repo: https://github.com/Freed-Wu/astyle-wheel
-    rev: 3.6.9
+    rev: 3.6.11
     hooks:
       - id: astyle
 ```
