@@ -20,6 +20,6 @@ jobs:
         run: |
           scripts/update-version.pl README.md pyproject.toml \
             packages/{py-,}astyle/{CMakeLists.txt,pyproject.toml}
-      - uses: stefanzweifel/git-auto-commit-action@v5
+      - uses: stefanzweifel/git-auto-commit-action@v7
         with:
           tagging_message: 3.6.9
