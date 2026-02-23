@@ -3,7 +3,7 @@ exclude: ^templates/
 
 repos:
   - repo: https://github.com/pre-commit/pre-commit-hooks
-    rev: v5.0.0
+    rev: v6.0.0
     hooks:
       - id: check-added-large-files
       - id: fix-byte-order-marker
@@ -23,7 +23,7 @@ repos:
       - id: check-toml
       - id: check-json
   - repo: https://github.com/Lucas-C/pre-commit-hooks
-    rev: v1.5.5
+    rev: v1.5.6
     hooks:
       - id: remove-crlf
   - repo: https://github.com/codespell-project/codespell
@@ -39,7 +39,7 @@ repos:
         args:
           - --msg-filename
   - repo: https://github.com/editorconfig-checker/editorconfig-checker.python
-    rev: 3.2.1
+    rev: 3.6.0
     hooks:
       - id: editorconfig-checker
   - repo: https://github.com/jumanjihouse/pre-commit-hooks
@@ -47,15 +47,15 @@ repos:
     hooks:
       - id: check-mailmap
   - repo: https://github.com/rhysd/actionlint
-    rev: v1.7.7
+    rev: v1.7.11
     hooks:
       - id: actionlint
   - repo: https://github.com/adrienverge/yamllint
-    rev: v1.37.1
+    rev: v1.38.0
     hooks:
       - id: yamllint
   - repo: https://github.com/executablebooks/mdformat
-    rev: 0.7.22
+    rev: 1.0.0
     hooks:
       - id: mdformat
         additional_dependencies:
@@ -69,22 +69,22 @@ repos:
           - mdformat-config
           - mdformat-web
   - repo: https://github.com/DavidAnson/markdownlint-cli2
-    rev: v0.18.1
+    rev: v0.21.0
     hooks:
       - id: markdownlint-cli2
         additional_dependencies:
           - markdown-it-texmath
   - repo: https://github.com/perltidy/perltidy
-    rev: "20250616.02"
+    rev: "20260204.01"
     hooks:
       - id: perltidy
   - repo: https://github.com/astral-sh/ruff-pre-commit
-    rev: v0.12.1
+    rev: v0.15.2
     hooks:
       - id: ruff
       - id: ruff-format
   - repo: https://github.com/kumaraditya303/mirrors-pyright
-    rev: v1.1.402
+    rev: v1.1.407
     hooks:
       - id: pyright
   - repo: https://github.com/Freed-Wu/astyle-wheel
