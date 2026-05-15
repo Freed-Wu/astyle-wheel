@@ -27,8 +27,8 @@ classifiers = [
   "Programming Language :: Python :: Implementation :: CPython",
   "Programming Language :: Python :: Implementation :: PyPy",
 ]
-version = "3.6.15"
-dependencies = ["astyle==3.6.15"]
+version = "3.6.16"
+dependencies = ["astyle==3.6.16"]
 
 [[project.authors]]
 name = "Andre Simon"
