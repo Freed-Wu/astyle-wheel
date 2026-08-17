@@ -31,7 +31,6 @@ email = "as@andre-simon.de"
 
 [[project.authors]]
 name = "Jim Pattee"
-email = "jimp03@1fe3c263-5997-42ff-936f-87a7378ef0cd"
 
 [[project.authors]]
 name = "Tal Davidson"
@@ -61,6 +60,8 @@ skip = "*38-* *39-*"
 build-frontend = "build[uv]"
 before-test = "pip install .[dev]"
 test-command = "pytest {project}"
+# pip: command not found
+test-skip = "*-macosx_* "
 
 [tool.cibuildwheel.environment]
 # error: 'path' is unavailable: introduced in macOS 10.15
