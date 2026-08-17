@@ -61,7 +61,8 @@ build-frontend = "build[uv]"
 before-test = "pip install packages/mdformat-astyle[dev]"
 test-command = "pytest {project}/packages/mdformat-astyle"
 # pip: command not found
-test-skip = "*-macosx_* "
+# FileNotFoundError: Unable to find library: msvcp140.dll
+test-skip = "*-macosx_* *-win_arm64"
 
 [tool.cibuildwheel.environment]
 # error: 'path' is unavailable: introduced in macOS 10.15
