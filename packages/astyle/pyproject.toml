@@ -1,37 +1,27 @@
-[build-system]
-requires = ["scikit-build-core"]
-build-backend = "scikit_build_core.build"
-
 # https://setuptools.pypa.io/en/latest/userguide/pyproject_config.html
 [project]
 name = "astyle"
+version = "3.6.10"
 description = "Artistic Style is a source code indenter, formatter, and beautifier for the C, C++, C++/CLI, Objective‑C, C# and Java programming languages"
 readme = "README.md"
+license = "GPL-3.0-or-later"
 keywords = ["formatter"]
 classifiers = [
   "Development Status :: 3 - Alpha",
   "Intended Audience :: Developers",
-  "Topic :: Software Development :: Build Tools",
-  "License :: OSI Approved :: GNU General Public License v3 (GPLv3)",
+  "Operating System :: MacOS",
   "Operating System :: Microsoft :: Windows",
   "Operating System :: POSIX",
   "Operating System :: Unix",
-  "Operating System :: MacOS",
-  "Programming Language :: Python :: 3 :: Only",
   "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3 :: Only",
   "Programming Language :: Python :: 3.10",
   "Programming Language :: Python :: 3.11",
   "Programming Language :: Python :: 3.12",
   "Programming Language :: Python :: Implementation :: CPython",
   "Programming Language :: Python :: Implementation :: PyPy",
+  "Topic :: Software Development :: Build Tools",
 ]
-version = "3.6.17"
-
-[tool.scikit-build.wheel]
-py-api = "py2.py3"
-
-[project.optional-dependencies]
-dev = ["pytest-cov"]
 
 [[project.authors]]
 name = "Andre Simon"
@@ -44,18 +34,22 @@ email = "jimp03@1fe3c263-5997-42ff-936f-87a7378ef0cd"
 [[project.authors]]
 name = "Tal Davidson"
 
-[project.license]
-text = "GPL v3"
-
 [project.urls]
-Homepage = "http://astyle.sourceforge.net"
-Download = "https://github.com/Freed-Wu/astyle-wheel/releases"
 "Bug Report" = "https://github.com/Freed-Wu/astyle-wheel/issues"
+Download = "https://github.com/Freed-Wu/astyle-wheel/releases"
+Homepage = "http://astyle.sourceforge.net"
 Source = "https://github.com/Freed-Wu/astyle-wheel"
+
+[project.optional-dependencies]
+dev = ["pytest-cov"]
+
+[build-system]
+requires = ["scikit-build-core"]
+build-backend = "scikit_build_core.build"
 
 [tool.cibuildwheel]
 archs = ["all"]
-build = "cp312-*"
+build = "cp314-*"
 build-frontend = "build[uv]"
 
 [tool.cibuildwheel.environment]
@@ -71,3 +65,6 @@ before-all = "pip install uv"
 [[tool.cibuildwheel.overrides]]
 select = ["*-musllinux_s390x", "*-musllinux_ppc64*"]
 build-frontend = "build"
+
+[tool.scikit-build.wheel]
+py-api = "py2.py3"

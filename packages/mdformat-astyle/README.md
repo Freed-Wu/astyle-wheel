@@ -6,15 +6,28 @@ This project provides python binding for
 ## Install
 
 ```shell
-pip install pyastyle2
+pip install mdformat-astyle
+```
+
+## API
+
+```python
+from astyle.binding import astyle
+
+astyle("  #include <Python.h>", "indent-classes")
 ```
 
 ## Usage
 
-```python
-from astyle import astyle
+``````markdown
+```c astyle=mode=kr,indent=2
+#include <Python.h>
+```
+``````
 
-astyle("  #include <Python.h>", "indent-classes")
+```sh
+pip install mdformat mdformat-astyle
+mdformat
 ```
 
 ### Alternatives

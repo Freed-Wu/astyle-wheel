@@ -1,7 +1,5 @@
 cmake_minimum_required(VERSION 3.15)
-# cmake-format: off
-set(VERSION 3.6.9 CACHE STRING "version of astyle")
-# cmake-format: on
+set(VERSION 3.6.10 CACHE STRING "version of astyle")
 project(
   astyle-wheel
   VERSION "${VERSION}"
@@ -30,11 +28,11 @@ include(UseCython)
 # https://github.com/elijahr/python-autopxd2/issues/54
 find_program(autopxd NAMES autopxd REQUIRED)
 execute_process(COMMAND "${autopxd}" "${CMAKE_CURRENT_SOURCE_DIR}/src/astyle/wrap.h" "${CMAKE_CURRENT_BINARY_DIR}/wrap.pxd")
-configure_file(src/astyle/__init__.pyi src/astyle/__init__.py COPYONLY)
-cython_transpile("${CMAKE_BINARY_DIR}/src/astyle/__init__.py"
-  CYTHON_ARGS "-3I${CMAKE_CURRENT_BINARY_DIR}" LANGUAGE C OUTPUT "${CMAKE_BINARY_DIR}/__init__.c")
-python_add_library(__init__ MODULE "${CMAKE_BINARY_DIR}/__init__.c" src/astyle/wrap.cc "${sources}" WITH_SOABI)
-target_compile_definitions(__init__ PRIVATE ASTYLE_LIB)
-target_include_directories(__init__ PRIVATE "${astyle_dir}")
-install(TARGETS __init__ DESTINATION "${SKBUILD_PLATLIB_DIR}/astyle")
-install(FILES src/astyle/__init__.pyi src/astyle/py.typed DESTINATION "${SKBUILD_PLATLIB_DIR}/astyle")
+configure_file(src/astyle/binding.pyi src/astyle/binding.py COPYONLY)
+cython_transpile("${CMAKE_BINARY_DIR}/src/astyle/binding.py"
+  CYTHON_ARGS "-3I${CMAKE_CURRENT_BINARY_DIR}" LANGUAGE C OUTPUT "${CMAKE_BINARY_DIR}/binding.c")
+python_add_library(binding MODULE "${CMAKE_BINARY_DIR}/binding.c" src/astyle/wrap.cc "${sources}" WITH_SOABI)
+target_compile_definitions(binding PRIVATE ASTYLE_LIB)
+target_include_directories(binding PRIVATE "${astyle_dir}")
+install(TARGETS binding DESTINATION "${SKBUILD_PLATLIB_DIR}/astyle")
+install(FILES src/astyle/mdformat.py src/astyle/binding.pyi src/astyle/py.typed DESTINATION "${SKBUILD_PLATLIB_DIR}/astyle")

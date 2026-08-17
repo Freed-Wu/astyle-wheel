@@ -1,33 +1,30 @@
-[build-system]
-requires = ["setuptools_scm[toml] >= 6.2", "setuptools-generate >= 0.0.6"]
-build-backend = "setuptools.build_meta"
-
 # https://setuptools.pypa.io/en/latest/userguide/pyproject_config.html
 [project]
 name = "pre_commit_placeholder_package"
+version = "3.6.10"
 description = "See actual project in `packages/*/`"
 readme = "packages/astyle/README.md"
 # type_a | type_b
 requires-python = ">= 3.10"
+license = "GPL-3.0-or-later"
 keywords = ["formatter"]
 classifiers = [
   "Development Status :: 3 - Alpha",
   "Intended Audience :: Developers",
-  "Topic :: Software Development :: Build Tools",
   "License :: OSI Approved :: GNU General Public License v3 (GPLv3)",
+  "Operating System :: MacOS",
   "Operating System :: Microsoft :: Windows",
   "Operating System :: POSIX",
   "Operating System :: Unix",
-  "Operating System :: MacOS",
-  "Programming Language :: Python :: 3 :: Only",
   "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3 :: Only",
   "Programming Language :: Python :: 3.10",
   "Programming Language :: Python :: 3.11",
   "Programming Language :: Python :: 3.12",
   "Programming Language :: Python :: Implementation :: CPython",
   "Programming Language :: Python :: Implementation :: PyPy",
+  "Topic :: Software Development :: Build Tools",
 ]
-version = "3.6.17"
 dependencies = ["astyle==3.6.17"]
 
 [[project.authors]]
@@ -41,26 +38,28 @@ email = "jimp03@1fe3c263-5997-42ff-936f-87a7378ef0cd"
 [[project.authors]]
 name = "Tal Davidson"
 
-[project.license]
-text = "GPL v3"
-
 [project.urls]
-Homepage = "http://astyle.sourceforge.net"
-Download = "https://github.com/Freed-Wu/astyle-wheel/releases"
 "Bug Report" = "https://github.com/Freed-Wu/astyle-wheel/issues"
+Download = "https://github.com/Freed-Wu/astyle-wheel/releases"
+Homepage = "http://astyle.sourceforge.net"
 Source = "https://github.com/Freed-Wu/astyle-wheel"
 
-[tool.uv.sources.astyle]
-workspace = true
+[build-system]
+requires = ["setuptools-generate >= 0.0.6", "setuptools_scm[toml] >= 6.2"]
+build-backend = "setuptools.build_meta"
 
-[tool.uv.workspace]
-members = ["packages/*"]
-
-[tool.mdformat]
-number = true
+[tool.coverage.report]
+exclude_lines = [
+  "if TYPE_CHECKING:",
+  "if __name__ == .__main__.:",
+  "\\s*import tomli as tomllib",
+]
 
 [tool.doq]
 template_path = "templates"
+
+[tool.mdformat]
+number = true
 
 [tool.ruff]
 line-length = 79
@@ -87,9 +86,8 @@ preview = true
 docstring-code-format = true
 preview = true
 
-[tool.coverage.report]
-exclude_lines = [
-  "if TYPE_CHECKING:",
-  "if __name__ == .__main__.:",
-  "\\s*import tomli as tomllib",
-]
+[tool.uv.sources.astyle]
+workspace = true
+
+[tool.uv.workspace]
+members = ["packages/*"]

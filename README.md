@@ -34,7 +34,9 @@
 [![pypi/implementation](https://shields.io/pypi/implementation/astyle)](https://pypi.org/project/astyle/#files)
 [![pypi/pyversions](https://shields.io/pypi/pyversions/astyle)](https://pypi.org/project/astyle/#files)
 
-See [astyle python distribution and binding](packages).
+- [astyle python distribution](packages/astyle)
+- [astyle plugin](packages/mdformat-astyle) for
+  [mdformat](https://github.com/hukkin/mdformat)
 
 `.pre-commit-config.yaml`:
 

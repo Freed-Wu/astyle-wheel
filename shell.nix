@@ -5,14 +5,16 @@
 with pkgs;
 mkShell {
   name = "astyle-wheel";
+  env = {
+    CMAKE_GENERATOR = "Ninja";
+  };
   buildInputs = [
     git
-
-    stdenv.cc
+    uv
+    ninja
 
     (python3.withPackages (
       p: with p; [
-        uv
         pytest
         scikit-build-core
 
@@ -21,7 +23,4 @@ mkShell {
       ]
     ))
   ];
-  shellHook = ''
-    export CMAKE_GENERATOR=Ninja
-  '';
 }
