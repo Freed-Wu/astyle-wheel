@@ -24,7 +24,7 @@ classifiers = [
   "Programming Language :: Python :: Implementation :: PyPy",
   "Topic :: Software Development :: Build Tools",
 ]
-dependencies = ["astyle==3.6.17"]
+dependencies = ["astyle==3.6.10"]
 
 [[project.authors]]
 name = "Andre Simon"
