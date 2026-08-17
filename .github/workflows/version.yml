@@ -22,4 +22,4 @@ jobs:
           .github/workflows/version.yml README.md pyproject.toml
       - uses: stefanzweifel/git-auto-commit-action@v5
         with:
-          tagging_message: 3.6.10
+          tagging_message: v7
