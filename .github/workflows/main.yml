@@ -37,7 +37,7 @@ jobs:
         with:
           package-dir: packages/astyle
         env:
-          CIBW_BUILD: ${{matrix.CIBW_BUILD}}
+          CIBW_BUILD: cp314${{matrix.CIBW_BUILD}}
       - uses: pypa/cibuildwheel@v4.2
         with:
           package-dir: packages/mdformat-astyle
