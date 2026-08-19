@@ -27,7 +27,9 @@ jobs:
             CIBW_BUILD: "*-manylinux_*"
             suffix: -manylinux
           - runs-on: macos-latest
+            CIBW_BUILD: "*"
           - runs-on: windows-latest
+            CIBW_BUILD: "*"
     runs-on: ${{matrix.runs-on}}
     steps:
       - uses: actions/checkout@v4
