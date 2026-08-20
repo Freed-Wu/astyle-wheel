@@ -64,8 +64,8 @@ jobs:
       - uses: astral-sh/setup-uv@v10.0.1
       - name: Build sdist
         run: |
-          uv build --package=packages/astyle --sdist
-          uv build --package=packages/mdformat-astyle --sdist
+          uv build --package=astyle --sdist
+          uv build --package=mdformat-astyle --sdist
       - uses: softprops/action-gh-release@v2
         if: startsWith(github.ref, 'refs/tags/')
         with:
