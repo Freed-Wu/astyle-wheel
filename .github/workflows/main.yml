@@ -61,6 +61,7 @@ jobs:
           pattern: artifact-*
           merge-multiple: true
           path: dist
+      - uses: astral-sh/setup-uv@v10.0.1
       - name: Build sdist
         run: |
           uv build --package=packages/astyle --sdist
