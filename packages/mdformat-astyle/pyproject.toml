@@ -4,8 +4,7 @@ name = "mdformat-astyle"
 version = "3.6.10"
 description = "Artistic Style is a source code indenter, formatter, and beautifier for the C, C++, C++/CLI, Objective‑C, C# and Java programming languages"
 readme = "README.md"
-# sysconfig.get_preferred_scheme()
-requires-python = ">= 3.10"
+requires-python = ">= 3.8"
 license = "GPL-3.0-or-later"
 keywords = ["formatter"]
 classifiers = [
@@ -57,7 +56,7 @@ build-backend = "scikit_build_core.build"
 [tool.cibuildwheel]
 archs = ["all"]
 # FileNotFoundError: Unable to find library: msvcp140.dll
-skip = "*38-* *39-* *-win_arm64"
+skip = "*38-* *39-* *310-* *-win_arm64"
 build-frontend = "build[uv]"
 before-test = "pip install packages/mdformat-astyle[dev]"
 test-command = "pytest {project}/packages/mdformat-astyle"
