@@ -1,7 +1,7 @@
 # https://setuptools.pypa.io/en/latest/userguide/pyproject_config.html
 [project]
 name = "pre_commit_placeholder_package"
-version = "3.6.10"
+version = "3.6.18"
 description = "See actual project in `packages/*/`"
 readme = "packages/astyle/README.md"
 # type_a | type_b
@@ -24,7 +24,7 @@ classifiers = [
   "Programming Language :: Python :: Implementation :: PyPy",
   "Topic :: Software Development :: Build Tools",
 ]
-dependencies = ["astyle==3.6.10"]
+dependencies = ["astyle==3.6.18"]
 
 [[project.authors]]
 name = "Andre Simon"
