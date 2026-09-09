@@ -32,7 +32,7 @@ jobs:
             CIBW_BUILD: "*"
     runs-on: ${{matrix.runs-on}}
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
       - uses: docker/setup-qemu-action@v3
         if: runner.os == 'Linux'
       - uses: pypa/cibuildwheel@v4.2
@@ -56,7 +56,7 @@ jobs:
       - build-wheels-and-test
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
       - uses: actions/download-artifact@v4
         with:
           pattern: artifact-*
