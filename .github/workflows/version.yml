@@ -20,6 +20,6 @@ jobs:
         run:
           scripts/update-version.pl packages/*/{CMakeLists.txt,pyproject.toml}
           .github/workflows/version.yml README.md pyproject.toml
-      - uses: stefanzweifel/git-auto-commit-action@v5
+      - uses: stefanzweifel/git-auto-commit-action@v7
         with:
           tag_name: 3.6.18
