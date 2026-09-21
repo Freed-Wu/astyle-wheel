@@ -19,11 +19,11 @@ astyle("  #include <Python.h>", "indent-classes")
 
 ## Usage
 
-``````markdown
+````markdown
 ```c astyle=mode=kr,indent=2
 #include <Python.h>
 ```
-``````
+````
 
 ```sh
 pip install mdformat mdformat-astyle
