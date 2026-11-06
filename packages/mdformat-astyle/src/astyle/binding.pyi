@@ -10,7 +10,6 @@ from cython.cimports.wrap import (  # type: ignore
 
 __version__ = AStyleGetVersion().decode()
 
-
 def astyle(source_in: str, options: str = "") -> str:
     r"""Python port of astyle.
 
