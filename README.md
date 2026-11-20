@@ -43,7 +43,7 @@
 ```yaml
 repos:
   - repo: https://github.com/Freed-Wu/astyle-wheel
-    rev: 3.6.24
+    rev: 3.6.26
     hooks:
       - id: astyle
 ```
