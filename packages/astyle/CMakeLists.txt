@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.15)
-set(VERSION 3.6.26 CACHE STRING "version of astyle")
+set(VERSION 3.6.28 CACHE STRING "version of astyle")
 project(
   astyle-wheel
   VERSION "${VERSION}"
